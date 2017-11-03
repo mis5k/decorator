@@ -1,0 +1,44 @@
+{
+  "name": "jspm-angular4-seed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "build": "tsc -p src",
+    "build:watch": "tsc -p src && tsc -p src --watch",
+    "build:trace": "tsc -p src --traceResolution",
+    "build:debug": "tsc -p src --listFiles --listEmittedFiles",
+    "serve": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jspm": "^0.16.53",
+    "lite-server": "^2.3.0",
+    "typescript": "^2.3.2"
+  },
+  "dependencies": {},
+  "jspm": {
+    "directories": {
+      "baseURL": "src",
+      "packages": "jspm_packages"
+    },
+    "configFile": "src/systemjs.config.js",
+    "dependencies": {
+      "@angular/common": "npm:@angular/common@^4.3.5",
+      "@angular/compiler": "npm:@angular/compiler@^4.3.5",
+      "@angular/core": "npm:@angular/core@^4.3.5",
+      "@angular/forms": "npm:@angular/forms@^4.3.5",
+      "@angular/http": "npm:@angular/http@^4.3.5",
+      "@angular/platform-browser": "npm:@angular/platform-browser@^4.3.5",
+      "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@^4.3.5",
+      "@angular/router": "npm:@angular/router@^4.3.5",
+      "core-js": "npm:core-js@^2.5.0",
+      "rxjs": "npm:rxjs@^5.4.3",
+      "zone.js": "npm:zone.js@^0.8.16"
+    },
+    "devDependencies": {}
+  }
+}
