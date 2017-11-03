@@ -1,10 +1,18 @@
 export function trace(enable:boolean, prefix:string = '') {
+
+  return function(target:any, propertyKey: string, descriptor: PropertyDescriptor) {
+
+    const originalMethod = descriptor.value;
     
-    return function (target:any, propertyKey: string, descriptor: PropertyDescriptor) {
-      console.log("g(): called");
-        console.log("target : "+ target);
-        console.log("propertyKey : " + propertyKey);
-        console.log("descriptor " + JSON.stringify(descriptor)); 
-        descriptor.configurable = enable;
-    }
+    descriptor.value = function() {
+      if(enable) {
+        console.log(prefix + ">>> ENTER ParentClass::" + propertyKey);
+        originalMethod.call(this, arguments[0]);
+        console.log(prefix + "<<< EXIT ParentClass::" + propertyKey);
+        return arguments[0];
+      }
+    };
+    return descriptor;  
+  }
+    
 }
